@@ -1,0 +1,37 @@
+<section class="pagination">
+  <nav aria-label="Page navigation">
+    <ul class="pagination">
+      <% if (hasPreviousPage) { %>
+      <li class="page-item"><a class="page-link" href="/?page=<%= previousPage %>">Previous</a></li>
+      <% } %>
+
+      <% if (currentPage > 2) { %>
+      <li class="page-item"><a class="page-link" href="/?page=1">1</a></li>
+      <% if (currentPage > 3) { %>
+      <li class="page-item disabled"><span class="page-link">...</span></li>
+      <% } %>
+      <% } %>
+
+      <% if (hasPreviousPage) { %>
+      <li class="page-item"><a class="page-link" href="/?page=<%= previousPage %>"><%= previousPage %></a></li>
+      <% } %>
+
+      <li class="page-item active"><span class="page-link"><%= currentPage %></span></li>
+
+      <% if (hasNextPage) { %>
+      <li class="page-item"><a class="page-link" href="/?page=<%= nextPage %>"><%= nextPage %></a></li>
+      <% } %>
+
+      <% if (currentPage < lastPage - 1) { %>
+      <% if (currentPage < lastPage - 2) { %>
+      <li class="page-item disabled"><span class="page-link">...</span></li>
+      <% } %>
+      <li class="page-item"><a class="page-link" href="/?page=<%= lastPage %>"><%= lastPage %></a></li>
+      <% } %>
+
+      <% if (hasNextPage) { %>
+      <li class="page-item"><a class="page-link" href="/?page=<%= nextPage %>">Next</a></li>
+      <% } %>
+    </ul>
+  </nav>
+</section>
