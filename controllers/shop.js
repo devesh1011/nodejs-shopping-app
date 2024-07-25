@@ -4,7 +4,7 @@ const path = require("path");
 
 const { generateInvoice } = require("../util/pdf_gen");
 
-const ITEMS_PER_PAGE = 1;
+const ITEMS_PER_PAGE = 4;
 
 exports.getProducts = async (req, res, next) => {
   try {
